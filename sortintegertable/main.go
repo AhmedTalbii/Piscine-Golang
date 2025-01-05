@@ -1,16 +1,16 @@
 package main 
+
 import "fmt"
 
-
-func SortIntegerTable(table []int) {
-	i:= 1
-	for i < len(table) {
-		if table[i-1] > table[i] {
-			temp := table[i-1]
-			table[i-1] = table[i]
-			table[i] = temp
+func SortIntegerTable(s []int) {
+	i := 1
+	for i < len(s) {
+		if s[i-1] > s[i] {
+			temp := s[i-1]
+			s[i-1] = s[i]
+			s[i] = temp
 			i = 1
-		}else {
+		} else {
 			i++
 		}
 	}

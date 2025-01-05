@@ -4,24 +4,25 @@ import "fmt"
 
 func max(arr []int)(int, int) {
 
-var maxVal,minVal,a,i int
-var ln int = len(arr)
-var b int = arr[0]
-   for i=1 ; i<ln; i++ {
-	a = arr[i]
-	if a > b {
-		b = a
-	}
+   var maxVal,minVal,a,i int
+   var ln int = len(arr)
+   var b int = arr[0]
+   for i=1 ; i < ln ; i++ {
+      a = arr[i] 
+      if a > b {
+      	b = a
+      }
    }
    maxVal = b
    for i=1 ; i<ln; i++ {
-	a = arr[i]
-	if a < b {
-		b = a
-	}
+      a = arr[i]
+      if a < b {
+      	b = a
+      }
    }
    minVal = b
    return maxVal,minVal
+      
 }
 
 func main() {

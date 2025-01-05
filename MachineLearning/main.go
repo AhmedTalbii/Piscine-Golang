@@ -57,7 +57,7 @@ func trainLinearRegression(x, y []float64, lr float64, epochs int) (float64, flo
 		}
 		m -= lr * dm / n
 		b -= lr * db / n
-		fmt.Printf("m : %v,b : %v\n",m,b)
+		// fmt.Printf("m : %v,b : %v\n",m,b)
 
 	}
 	return m, b
@@ -90,7 +90,7 @@ func main() {
 
 	// Train the model
 	lr := 0.01 // Learning rate
-	epochs := 200
+	epochs := 2000
 	m, b := trainLinearRegression(trainX, trainY, lr, epochs)
 
 	// Print the trained model parameters

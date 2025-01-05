@@ -1,8 +1,9 @@
 package main
+
 import "fmt"
 
 func Sqrt(nb int) int {
-	for i:=1 ; i<=nb; i++ {
+	for i := 0; i <= nb;i++{
 		if i * i == nb {
 			return i
 		}
@@ -11,6 +12,5 @@ func Sqrt(nb int) int {
 }
 
 func main() {
-	fmt.Printf("%v\n",Sqrt(4))
-	fmt.Printf("%v",Sqrt(3))
+	fmt.Printf("%v",Sqrt(64))
 }
