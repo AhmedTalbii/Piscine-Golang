@@ -7,16 +7,14 @@ func LastWord(str string) string {
 		return ""
 	}
 	res := ""
-	for i := 0 ; i < len(str)-1; i++ {
-		if (str[i] == ' ' && str[i+1] != ' ') {
-			res = ""
-		} else if (str[i] == '\' && str[i+1] == 't') {
+	for i := 1 ; i < len(str); i++ {
+		if (str[i] != ' ' && str[i-1] == ' ' || str[i-1] == '\t') {
 			res = ""
 		} else {
-			res = res + string(str[i])
-			if i == len(str)-2 {
-				res = res + string(str[i+1])
+			if str[i-1] != ' ' && len(res) == 0 {
+				res = res + string(str[i-1])
 			}
+			res = res + string(str[i])
 		}
 	}
 	res = res + "\n"
