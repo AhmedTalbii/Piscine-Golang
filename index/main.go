@@ -4,28 +4,20 @@ import "fmt"
 
 
 func Index(s string, toFind string) int {
-	size1 := 0
-	size2 := 0
-	for range s {
-		size1++
-	}
-	for range toFind {
-		size2++
-	}
-	if size2 == 0 {
-		return 0
-	} else if size2 > size1 {
+	if len(s) == 0 || len(s) < len(toFind) {
 		return -1
-	} else if size1 == size2 {
-		if s == toFind {
-			return 0
-		}
-		return -1
-	} else if size1 > size2 {
-		for i := 0; i <= size1-size2; i++ {
-			if s[i:i+size2] == toFind {
+	}
+	for i := 0 ; i <= len(s) - len(toFind); i++ {
+		if s[i] == toFind[0] {
+			res := true
+			
+			for j := 0 ; j < len(toFind) ; j++ {
+				if s[i+j] != toFind[j] {
+					res = false 
+				}
+			}
+			if res {
 				return i
-				break
 			}
 		}
 	}
@@ -33,7 +25,7 @@ func Index(s string, toFind string) int {
 }
 
 func main() {
-	fmt.Println(Index("Hello!", "l"))
+	fmt.Println(Index("Hello!llca", "allc"))
 	fmt.Println(Index("Salut!", "alu"))
 	fmt.Println(Index("Ola!", "hOl"))
 }
